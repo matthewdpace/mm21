@@ -18,3 +18,9 @@ func lightsOn():
 	$LightDownward02.visible = true
 	$LightDownward03.visible = true
 	$LightDownward04.visible = true
+
+func setParticles(thrustVector, rotVector):
+	if thrustVector.y > 0.5:
+		$UpThrustParticles.emitting = true
+	else:
+		$UpThrustParticles.emitting = false

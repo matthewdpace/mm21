@@ -17,6 +17,7 @@ script = ExtResource("1_7jo2w")
 
 [node name="craft_miner" parent="." instance=ExtResource("2_x0pxd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 1.475)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347, 0)
