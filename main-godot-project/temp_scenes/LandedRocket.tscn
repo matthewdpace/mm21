@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1bl12wojp4n3"]
+
+[ext_resource type="PackedScene" uid="uid://b6ug3uaaasb46" path="res://thirdparty/kenney-space-gltf/rocket_baseA.glb" id="1_3ivhw"]
+[ext_resource type="PackedScene" uid="uid://dib4xvkimnwvm" path="res://thirdparty/kenney-space-gltf/rocks_smallA.glb" id="2_nch82"]
+[ext_resource type="PackedScene" uid="uid://cp3b1teud5fpa" path="res://thirdparty/kenney-space-gltf/rocket_topA.glb" id="3_h7p4d"]
+[ext_resource type="PackedScene" uid="uid://nkrv577yrh2w" path="res://thirdparty/kenney-space-gltf/rocket_fuelB.glb" id="4_ik6ou"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_op4iy"]
+height = 10.0
+
+[node name="LandedRocket" type="StaticBody3D"]
+
+[node name="rocket_baseA" parent="." instance=ExtResource("1_3ivhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+
+[node name="rocks_smallA" parent="." instance=ExtResource("2_nch82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
+
+[node name="rocket_topA" parent="." instance=ExtResource("3_h7p4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 9.55234, -1.5)
+
+[node name="rocket_fuelB" parent="." instance=ExtResource("4_ik6ou")]
+transform = Transform3D(1, 0, 0, 0, 8.51, 0, 0, 0, 1, -2, 0.978131, -1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 5, 0)
+shape = SubResource("CylinderShape3D_op4iy")

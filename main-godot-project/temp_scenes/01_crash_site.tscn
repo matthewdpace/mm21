@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy6vx6kwf8lbn"]
+
+[ext_resource type="Texture2D" uid="uid://cw7rajtiavhv" path="res://thirdparty/kenney-prototype-textures/Dark/texture_01.png" id="1_10th7"]
+[ext_resource type="PackedScene" uid="uid://b1bl12wojp4n3" path="res://temp_scenes/LandedRocket.tscn" id="2_0t6iy"]
+[ext_resource type="PackedScene" uid="uid://doa7u5jwh54u4" path="res://ships/KenneyTest01.tscn" id="3_s4m1n"]
+
+[sub_resource type="Sky" id="Sky_3r3q4"]
+
+[sub_resource type="Environment" id="Environment_8c6gf"]
+background_mode = 2
+sky = SubResource("Sky_3r3q4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yro8r"]
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y80gt"]
+albedo_texture = ExtResource("1_10th7")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3k4we"]
+material = SubResource("StandardMaterial3D_y80gt")
+size = Vector3(1000, 1, 1000)
+
+[node name="CrashSite" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8c6gf")
+
+[node name="StartPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.168, 0)
+
+[node name="look_at" type="Node3D" parent="StartPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2648, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47985, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00124109, 0)
+shape = SubResource("BoxShape3D_yro8r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_3k4we")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.242074, 0.970258, -1.4607e-11, -0.182939, -0.0456424, 0.982064, 0.952855, 0.237732, 0.188547, 0, 556.982, 0)
+light_energy = 10.448
+
+[node name="LandedRocket" parent="." instance=ExtResource("2_0t6iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54944, -0.5, -165.441)
+
+[node name="KenneyTest01" parent="." instance=ExtResource("3_s4m1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02373, 0)
