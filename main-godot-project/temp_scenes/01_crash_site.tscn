@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy6vx6kwf8lbn"]
+[gd_scene load_steps=10 format=3 uid="uid://cy6vx6kwf8lbn"]
 
 [ext_resource type="Texture2D" uid="uid://cw7rajtiavhv" path="res://thirdparty/kenney-prototype-textures/Dark/texture_01.png" id="1_10th7"]
 [ext_resource type="PackedScene" uid="uid://b1bl12wojp4n3" path="res://temp_scenes/LandedRocket.tscn" id="2_0t6iy"]
 [ext_resource type="PackedScene" uid="uid://doa7u5jwh54u4" path="res://ships/KenneyTest01.tscn" id="3_s4m1n"]
+[ext_resource type="PackedScene" uid="uid://7tc6mgc4fhe1" path="res://temp_scenes/valley.tscn" id="4_cptxp"]
 
 [sub_resource type="Sky" id="Sky_3r3q4"]
 
@@ -51,3 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54944, -0.5, -165.441)
 
 [node name="KenneyTest01" parent="." instance=ExtResource("3_s4m1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02373, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("4_cptxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84736, 134.137)

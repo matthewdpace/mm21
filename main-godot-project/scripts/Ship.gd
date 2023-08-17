@@ -8,9 +8,7 @@ class_name Ship extends RigidBody3D
 
 signal playerlinvel(x, y, z)
 signal playerrotvel(x, y, z)
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 
 var lastPos = Vector3(0.0, 0.0, 0.0)
 var lastRot = Vector3(0.0, 0.0, 0.0)
@@ -26,27 +24,38 @@ func _integrate_forces(state):
 	#print(delta)
 	var delta = state.get_step()
 	if Input.is_action_pressed("movement_backward"):
-		self.apply_central_impulse(Vector3.FORWARD * delta * thrust)
+		self.apply_central_impulse(global_transform.basis.z * 1 * delta * thrust)
 	if Input.is_action_pressed("movement_forward"):
-		self.apply_central_impulse(Vector3.BACK * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.z * -1 * delta *  thrust)
 	if Input.is_action_pressed("movement_left"):
-		self.apply_central_impulse(Vector3.RIGHT * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.x * 1 * delta *  thrust)
 	if Input.is_action_pressed("movement_right"):
-		#print("right")
-		self.apply_central_impulse(Vector3.LEFT * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.x * -1 * delta *  thrust)
 	if Input.is_action_pressed("movement_up"):
-		self.apply_central_impulse(Vector3.UP * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.y * 1 * delta *  thrust)
 	if Input.is_action_pressed("movement_down"):
-		self.apply_central_impulse(Vector3.DOWN * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.y * -1 * delta *  thrust)
 	
 	if Input.is_action_pressed("engine_down"):
 		self.thrust = self.thrust / 2
 	if Input.is_action_pressed("engine_up"):
 		self.thrust = self.thrust * 2
+		
+		
 	if Input.is_action_pressed("roll_left"):
 		self.apply_torque_impulse(Vector3(0, 0.0, -1.0) * delta *  thrust * 0.01)
 	if Input.is_action_pressed("roll_right"):
 		self.apply_torque_impulse(Vector3(0, 0.0, 1.0) * delta *  thrust * 0.01)
+	if Input.is_action_pressed("pitch_up"):
+		self.apply_torque_impulse(Vector3(1, 0.0, 0.0) * delta *  thrust * 0.01)
+	if Input.is_action_pressed("pitch_down"):
+		self.apply_torque_impulse(Vector3(-1, 0.0, 0.0) * delta *  thrust * 0.01)
+	if Input.is_action_pressed("yaw_left"):
+		self.apply_torque_impulse(Vector3(0, 1.0, 0.0) * delta *  thrust * 0.01)
+	if Input.is_action_pressed("yaw_right"):
+		self.apply_torque_impulse(Vector3(0, -1.0, 0.0) * delta *  thrust * 0.01)
+	
+	
 		
 	var xvel = self.position.x - lastPos.x / delta 
 	var yvel = self.position.y - lastPos.y / delta
