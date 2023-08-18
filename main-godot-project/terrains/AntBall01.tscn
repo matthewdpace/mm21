@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cxjbhppdv4j"]
+
+[ext_resource type="PackedScene" uid="uid://cikrm20g5gvs6" path="res://blender_models/ANT-ball01-landscape-only.glb" id="1_o3stt"]
+[ext_resource type="PackedScene" uid="uid://doa7u5jwh54u4" path="res://ships/KenneyTest01.tscn" id="2_i756r"]
+
+[node name="AntBall01" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="ANT-ball01-landscape-only" parent="StaticBody3D" instance=ExtResource("1_o3stt")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -1, 0, 0)
+
+[node name="KenneyTest01" parent="." instance=ExtResource("2_i756r")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4633, 797, -143)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 7073, 0)
+light_energy = 15.64
