@@ -12,6 +12,9 @@ signal playerrotvel(x, y, z)
 
 var lastPos = Vector3(0.0, 0.0, 0.0)
 var lastRot = Vector3(0.0, 0.0, 0.0)
+var thrustVector = Vector3(0.0, 0.0, 0.0)
+var rotateVector = Vector3(0.0, 0.0, 0.0)
+
 var thrust = 600.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,12 +24,20 @@ func _ready():
 
 
 func _integrate_forces(state):
-	#print(delta)
+	# If this all works as of 2023-08-16, an official thank you to godot forums
+	# user, wombatstampede (heh, good handle).  I will maintain that I could
+	# have figured this out with enough temp .tscn files, nodes, notebook pages
+	# etc.  But it's so much easier when someone not only explains the math,
+	# the logic, but gives you sample projects to look at.
+	# A secondary shoutout to the waybackmachine and the archive.org team for
+	# ensuring access to this data after the godot forums moved and nuked their 
+	# URLS.
+	
 	var delta = state.get_step()
 	if Input.is_action_pressed("movement_backward"):
-		self.apply_central_impulse(global_transform.basis.z * 1 * delta * thrust)
+		self.apply_central_impulse(global_transform.basis.z * -1 * delta * thrust)
 	if Input.is_action_pressed("movement_forward"):
-		self.apply_central_impulse(global_transform.basis.z * -1 * delta *  thrust)
+		self.apply_central_impulse(global_transform.basis.z * 1 * delta *  thrust)
 	if Input.is_action_pressed("movement_left"):
 		self.apply_central_impulse(global_transform.basis.x * 1 * delta *  thrust)
 	if Input.is_action_pressed("movement_right"):

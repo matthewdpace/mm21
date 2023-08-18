@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy6vx6kwf8lbn"]
+[gd_scene load_steps=12 format=3 uid="uid://cy6vx6kwf8lbn"]
 
 [ext_resource type="Texture2D" uid="uid://cw7rajtiavhv" path="res://thirdparty/kenney-prototype-textures/Dark/texture_01.png" id="1_10th7"]
+[ext_resource type="PackedScene" uid="uid://bt8ckx7kqqnec" path="res://ui/HUD01.tscn" id="1_ry72o"]
 [ext_resource type="PackedScene" uid="uid://b1bl12wojp4n3" path="res://temp_scenes/LandedRocket.tscn" id="2_0t6iy"]
 [ext_resource type="PackedScene" uid="uid://doa7u5jwh54u4" path="res://ships/KenneyTest01.tscn" id="3_s4m1n"]
 [ext_resource type="PackedScene" uid="uid://7tc6mgc4fhe1" path="res://temp_scenes/valley.tscn" id="4_cptxp"]
+[ext_resource type="PackedScene" uid="uid://b33b2awg6ku" path="res://buildings/HomeBase01.tscn" id="6_qy6mr"]
 
 [sub_resource type="Sky" id="Sky_3r3q4"]
 
@@ -23,6 +25,8 @@ material = SubResource("StandardMaterial3D_y80gt")
 size = Vector3(1000, 1, 1000)
 
 [node name="CrashSite" type="Node3D"]
+
+[node name="HUD01" parent="." instance=ExtResource("1_ry72o")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8c6gf")
@@ -55,3 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02373, 0)
 
 [node name="Node3D" parent="." instance=ExtResource("4_cptxp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84736, 134.137)
+
+[node name="HomeBase01" parent="." instance=ExtResource("6_qy6mr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.269, 0.0189089, 62.5613)
