@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://u27027lwl6s1"]
+
+[ext_resource type="FontFile" uid="uid://bgluko84em84k" path="res://fonts/secret_code/secrcode.ttf" id="1_kqie1"]
+
+[resource]
+default_font = ExtResource("1_kqie1")
+DataLight/font_sizes/DataLIghtFontRegs = 16
+DataLight/font_sizes/DataLightFontBigger = 24
+DataLight/fonts/DataLightFont = ExtResource("1_kqie1")
+Label/font_sizes/DataHeader = 16
+Label/font_sizes/DataSmall = 24

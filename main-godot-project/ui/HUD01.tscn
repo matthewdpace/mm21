@@ -1,0 +1,219 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt8ckx7kqqnec"]
+
+[ext_resource type="Theme" uid="uid://u27027lwl6s1" path="res://ui/HUD01_PhysicsPanel.tres" id="1_6usow"]
+[ext_resource type="Script" path="res://ui/HUD01.gd" id="1_wn1hn"]
+
+[node name="HUD01" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wn1hn")
+
+[node name="PVA" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PVA"]
+layout_mode = 0
+offset_left = 1758.0
+offset_top = 53.0
+offset_right = 2419.0
+offset_bottom = 601.0
+theme = ExtResource("1_6usow")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PVA/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.993
+offset_bottom = -0.164001
+
+[node name="PositionVBox" type="VBoxContainer" parent="PVA/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="PosLabel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Position Data:"
+
+[node name="XPos" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Pos:"
+
+[node name="YPos" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Pos:  "
+
+[node name="ZPos" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Pos: "
+
+[node name="RPos" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Pos: "
+
+[node name="VelLabel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Velocity Data:"
+
+[node name="XVel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Vel: "
+
+[node name="YVel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Vel: "
+
+[node name="ZVel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Vel: "
+
+[node name="RVel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Vel: "
+
+[node name="AccLabel" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Acceleration Data:"
+
+[node name="XAcc" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Acc:"
+
+[node name="YAcc" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Acc:"
+
+[node name="ZAcc" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Acc: "
+
+[node name="RAcc" type="Label" parent="PVA/Panel/HBoxContainer/PositionVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Acc:"
+
+[node name="RotationVBox" type="VBoxContainer" parent="PVA/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="RotLabel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Rotation Data:"
+
+[node name="XRot" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Rot:"
+
+[node name="YRot" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Rot:  "
+
+[node name="ZRot" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Rot: "
+
+[node name="RPos" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Rot: "
+
+[node name="VelLabel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Angular Velocity:"
+
+[node name="XVel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Vel: "
+
+[node name="YVel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Vel: "
+
+[node name="ZVel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Vel: "
+
+[node name="RVel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Vel: "
+
+[node name="AccLabel" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderLarge"
+text = "Angular Acceleration:"
+
+[node name="XAcc" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "X Acc:"
+
+[node name="YAcc" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Y Acc:"
+
+[node name="ZAcc" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderSmall"
+text = "Z Acc: "
+
+[node name="RAcc" type="Label" parent="PVA/Panel/HBoxContainer/RotationVBox"]
+layout_mode = 2
+theme = ExtResource("1_6usow")
+theme_type_variation = &"HeaderMedium"
+text = "R Acc:"

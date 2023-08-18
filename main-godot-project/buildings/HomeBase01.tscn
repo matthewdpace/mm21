@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b33b2awg6ku"]
+
+[ext_resource type="PackedScene" uid="uid://de2bib08qtoyp" path="res://thirdparty/kenney-space-gltf/hangar_largeB.glb" id="1_sswrd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q64hh"]
+size = Vector3(20, 10, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ry70g"]
+size = Vector3(100, 144, 120)
+
+[node name="HomeBase01" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="BldgCol" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_q64hh")
+
+[node name="hangar_largeB" parent="." instance=ExtResource("1_sswrd")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -20, 0, -15.5)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="InteractiveZone" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72, 23)
+shape = SubResource("BoxShape3D_ry70g")
